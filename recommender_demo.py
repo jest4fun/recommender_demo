@@ -1,13 +1,3 @@
-#####################################################
-# Date: June, 21, 2018                              #
-# Author: Yang Jiang                                #
-# Contact: yangjiang.us@gmail.com                   #
-#                                                   #
-# For EY internal communication only                #
-#                                                   #
-# COPYRIGHT © 2018 YANG JIANG ALL RIGHTS RESERVED   #
-#####################################################
-
 import implicit
 import pandas as pd
 import numpy as np
