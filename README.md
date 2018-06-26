@@ -48,10 +48,28 @@ Notice that the grid search is very slow and the purpose of the demo is just a w
 
 # Benchmarking performance
 
-To have a better idea of 
+To have a better idea of how good is the 18.8% performance, we benchmark the result with two alternative simple approaches:
+* Popularity approach: for each user, this approach will only recommend the top 10 most popular items which does not appear in user's training data without any personalization. This approaches gives us a percision at 10 of 3.9% in testing dataset, just 1/5 as the recommendation approach with personalization.
+* Random approach: for each user, this approach will randomly recommend 10 items which does not appear in user's training data, which only gives us a percision at 10 of 0.27% in testing dataset, less than 1/10 as the popularity approach.
 
+We can see the popularity approach without any personalization already did a great job than the random approach, and the recommendation system further rockets up the performance. Nowadays, personalization has already been treated as a core strategy in business everywhere.
 
-
+<img src="/pic/barplot.png" width="40%">
 
 # Recommendation usage
 
+Now we already know how good is the recommendation system, in this last section of demo we will show some case example of using recommendation upon a specific user. We will randomly select one user, say user index 1001, and list his top 10 purchases in training data:
+
+<img src="/pic/item_training.png" width="35%">
+
+There are two groups of items he purchased: Christmas tree decorations and kitchen tools. Now let's check what the top 10 recommendations for him are and whether he actually bought them in testing dataset or not:
+
+<img src="/pic/item_testing.png" width="45%">
+
+We can see the top recommendations are indeed closely related with the above two groups. The user bought 2 out of 10 recommended items, which is close to the average performance 1.88, for all other users, on average we would expect such accuracy of recommendation.
+
+Last, the algorithm can also provide a list of item similarities. E.g., randomly choosing an item, say item ID 123, the algorithm can give the top 10 items that are most similar to the select item "ABSTRACT CIRCLES SKETCHBOOK",
+
+<img src="/pic/similar_item.png" width="45%">
+
+We can see most of the top similar items are other types of sketchbooks. The algorithm also recommended two earrings, which seems irrelevant to sketchbook at all! I would guess that people will buy sketchbooks tend to prefer fancy things and earrings will come out in this way. 
